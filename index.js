@@ -76,12 +76,12 @@ async function createSecret() {
             registerNewRepo(input: {name: "My repo"}) {
                success
                message
-               secretRepoId
+               secretId
              }
     }
     `;
     const response = await sendGraphQL(query, {}, url);
-    const secretId = response.data.registerNewRepo.secretRepoId;
+    const secretId = response.data.registerNewRepo.secretId;
     return secretId;
 }
 
